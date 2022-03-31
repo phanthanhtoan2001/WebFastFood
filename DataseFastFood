@@ -1,5 +1,4 @@
-# WebFastFood
-Project FastFood
+
 create database FastFood
 go
 use FastFood
