@@ -1,0 +1,70 @@
+﻿@model IEnumerable<FastFood.Models.SanPham>
+
+@{
+    ViewBag.Title = "Listsanpham";
+    Layout = "~/Views/Layout/Layout.cshtml";
+}
+
+<h2>Listsanpham</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Tensp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dongia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Size)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hinhanh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Soluongton)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaNCC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaLoaiSP)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tensp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dongia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Size)
+        </td>
+        <td>
+            <img class="img-fluid" style="width:50px;height:50px;" src="@item.Hinhanh" alt="Ảnh minh họa">
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Soluongton)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaNCC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaLoaiSP)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MaSP }) |
+            @Html.ActionLink("Detail", "Detail", new { id=item.MaSP }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MaSP })
+        </td>
+    </tr>
+}
+
+</table>
