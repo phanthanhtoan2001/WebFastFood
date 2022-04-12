@@ -16,7 +16,7 @@ namespace VSLT_FastfoodTeam
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "LayoutMain", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Food", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

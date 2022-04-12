@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using VSLT_FastfoodTeam.Models;
 
 namespace VSLT_FastfoodTeam.Controllers
 {
     public class HomeController : Controller
     {
+        MyDataDataContext data = new MyDataDataContext();
         public ActionResult Index()
         {
-            return View();
+            var all = (from s in data.SanPhams select s).OrderBy(m => m.MaSP);
+            return View(all);
         }
 
         public ActionResult About()

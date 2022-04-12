@@ -1,8 +1,14 @@
-﻿
+﻿@using VSLT_FastfoodTeam.Models;
+@model IEnumerable<SanPham>
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/LayoutMain/_LayoutPage1.cshtml";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
 }
-
-<h2 style="margin-bottom:30%">Thông tin hình ảnh các món ăn </h2>
-
+@{
+    IEnumerable<SanPham> lstSP = (IEnumerable<SanPham>)ViewBag.ListSP;
+    IEnumerable<SanPham> lstNGK = (IEnumerable<SanPham>)ViewBag.ListNGK;
+}
+<div class="container">
+    @Html.Partial("~/Views/LayoutMain/SanPhamPartial_content_1.cshtml", lstSP)
+    @Html.Partial("~/Views/LayoutMain/SanPhamPartial_content_2.cshtml", lstNGK)
+</div>
